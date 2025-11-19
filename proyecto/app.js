@@ -6,7 +6,7 @@ boton.addEventListener('click', () => {
   const f = parseInt(document.getElementById('filas').value);
   const c = parseInt(document.getElementById('columnas').value);
   if (isNaN(f) || isNaN(c) || f <= 0 || c <= 0) {
-    alert('Por favor ingresa números válidos.');
+    alert('Por favor ingresa numeros validos.');
     return;
   }
   crearTabla(f, c);
@@ -15,7 +15,7 @@ boton.addEventListener('click', () => {
 function crearTabla(f, c) {
   let html = `
     <div class="card p-4">
-      <h5 class="mb-3">Ingrese los costos, oferta y demanda</h5>
+      <h5 class="mb-3">ingrese los costos, oferta y demanda</h5>
       <div class="table-responsive">
         <table class="table table-bordered tabla-inputs">
           <thead>
@@ -38,7 +38,7 @@ function crearTabla(f, c) {
   }
   html += `<td></td></tr></tbody></table></div>
       <div class="text-center mt-3">
-        <button class="btn btn-success" id="calcular">Calcular Costo Mínimo</button>
+        <button class="btn btn-success" id="calcular">Calcular Costo Minimo</button>
       </div>
     </div>
   `;
@@ -69,9 +69,11 @@ function resolver(f, c) {
   const sumaOferta = oferta.reduce((a, b) => a + b, 0);
   const sumaDemanda = demanda.reduce((a, b) => a + b, 0);
   if (sumaOferta !== sumaDemanda) {
-    alert(`Problema no balanceado.\nOferta total: ${sumaOferta}\nDemanda total: ${sumaDemanda}\n\nPor favor, balancee el problema.`);
+    alert(`Problema no balanceado.\nOferta total: ${sumaOferta}\nDemanda total: ${sumaDemanda}\n\n favor, balancee el problemaa.`);
     return;
   }
+
+
 
   let disponibleO = [...oferta];
   let disponibleD = [...demanda];
@@ -124,11 +126,11 @@ function resolver(f, c) {
 
 function mostrar(asignacion, total, pasos, costos) {
   let html = `<div class="card p-4">
-    <h5 class="mb-4">Resultado del Método de Costo Mínimo</h5>
+    <h5 class="mb-4">Resultado del Metodo de costo minimo</h5>
     
     <div class="row">
       <div class="col-md-6">
-        <h6>Matriz de Asignaciones</h6>
+        <h6>Matriz de asignaciones</h6>
         <table class="table table-bordered text-center mt-3">
           <thead class="table-light">
             <tr>
@@ -151,7 +153,7 @@ function mostrar(asignacion, total, pasos, costos) {
       </div>
       
       <div class="col-md-6">
-        <h6>Política de Entrega (Logística)</h6>
+        <h6>Entrega (Logistica)</h6>
         <div class="bg-light p-3 rounded mt-3">
           <p class="mb-2"><strong>Cantidad × Costo</strong></p>`;
   
@@ -166,14 +168,14 @@ function mostrar(asignacion, total, pasos, costos) {
   
   html += `<hr>
           <div class="fw-bold fs-5 text-center">
-            Costo Total Transporte = $ ${total.toLocaleString()}
+            Costo total transporte = $ ${total.toLocaleString()}
           </div>
         </div>
       </div>
     </div>
     
     <div class="alert alert-success mt-4 text-center">
-      <strong>Costo Total Mínimo: $ ${total.toLocaleString()}</strong>
+      <strong>costo total minimo: $ ${total.toLocaleString()}</strong>
     </div>
   </div>`;
   
